@@ -5,17 +5,14 @@
 const XMLFILENAME = 'data.xml';                                         
 const KEY = "quiz";
 const MCQAnswers = [];
-var MCQDATA = JSON.parse(window.localStorage.getItem(KEY)) || [];
+var MCQDATA = [];
 var AnsweredQuestion = 0;
 var result = 0;
 
 $(function () {
    loadItem(XMLFILENAME);
-   // check if XML objects are loaded or not
-   if (localStorage.getItem(KEY) === null) {
-      location.reload();
-   }
-   updateDOMElements('#root', MCQDATA); 
+   MCQDATA = JSON.parse(window.localStorage.getItem(KEY)) || [];
+   updateDOMElements('#root', MCQDATA);
 });
 
 // function to load item from XML File
@@ -25,6 +22,7 @@ function loadItem(file) {
       url: file,
       cache: false,
       dataType: "xml",
+      async:false,
       success: function (xml) {
          mcqArray = [];
          $(xml).find('Questions').each(function () {
