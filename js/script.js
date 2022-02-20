@@ -11,7 +11,12 @@ var result = 0;
 
 $(function () {
    loadItem(XMLFILENAME);
-   updateDOMElements('#root', MCQDATA);
+   // check if XML objects are loaded or not
+   if (localStorage.getItem(KEY) !== null) {
+      updateDOMElements('#root', MCQDATA);
+   } else {   
+      location.reload();
+   }
 });
 
 // function to load item from XML File
@@ -40,7 +45,6 @@ function loadItem(file) {
          });
 
          window.localStorage.setItem(KEY, JSON.stringify(mcqArray));
-         MCQDATA = mcqArray;
       },
       error: function (data, errorThrown) {
          console.log('request failed : ' + errorThrown);
