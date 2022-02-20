@@ -12,11 +12,10 @@ var result = 0;
 $(function () {
    loadItem(XMLFILENAME);
    // check if XML objects are loaded or not
-   if (localStorage.getItem(KEY) !== null) {
-      updateDOMElements('#root', MCQDATA);
-   } else {   
+   if (localStorage.getItem(KEY) === null) {
       location.reload();
    }
+   updateDOMElements('#root', MCQDATA); 
 });
 
 // function to load item from XML File
