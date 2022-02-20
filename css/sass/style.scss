@@ -1,0 +1,67 @@
+$green: #86BC25;
+
+input[type='radio'] {
+    left: 48%;
+    position: relative;
+    border-radius: 0px !important;
+}
+
+.main {
+    .main-questions {
+        border-radius: 20px;
+    }
+}
+
+.bg-green {
+    background-color: $green;
+}
+
+.bg-lightgreen {
+    background-color: #D8E4C3;
+    color: #000;
+}
+
+.color-blue {
+    color: #76aecd;
+}
+
+button[disabled=disabled],
+button:disabled {
+    background-color: #BCBCBC;
+}
+
+button:disabled,
+button[disabled] {
+    background-color: #BCBCBC !important;
+    color: #000;
+}
+
+button {
+    background-color: $green !important;
+    color: #000 !important
+}
+
+.form-check-input:checked {
+    background-color: $green;
+    border-color: $green;
+}
+
+@media(max-width: 768px) {
+    // increase the button size to full width for mobile devices
+    button.full-width-mobile {
+        width: 100%;  
+        color: '#000';
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .border-right-10 {
+        border-right: 10px solid #fff;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .question-count {
+        height: 120px !important;
+    }
+}
