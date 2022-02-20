@@ -12,3 +12,5 @@ This MCQ Questionair loads the question and answer from `data.xml` file
 - Clone this repo in your php public server.
 - run index.html
 
+# Note
+This Application should run in a web server. (Modern browser doesn't allow reading file because of CORS policy)
